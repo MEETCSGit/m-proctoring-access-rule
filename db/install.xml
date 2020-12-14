@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/quiz/accessrule/mproctoring/db" VERSION="2019120400" COMMENT="XMLDB file for Moodle mod/quiz/accessrule/mproctoring"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../../../lib/xmldb/xmldb.xsd">
+  <TABLES>
+  	    <TABLE NAME="quizaccess_mproctoring_sett" COMMENT="Stores the quiz level M Proctoring configuration.">
+     <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz id."/>
+        <FIELD NAME="cmid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to course module id."/>
+        <FIELD NAME="enablemproctoing" TYPE="int" LENGTH="1" NOTNULL="true" SEQUENCE="false" COMMENT="Bool whether to require mproctoring."/>
+
+        <FIELD NAME="enableurl" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow record user url."/>
+        <FIELD NAME="enablescreencapture" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow screen capture" />
+         <FIELD NAME="enableevent" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow record user audio."/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="quizid" TYPE="foreign-unique" FIELDS="quizid" REFTABLE="quiz" REFFIELDS="id"/>
+        <KEY NAME="cmid" TYPE="foreign-unique" FIELDS="cmid" REFTABLE="course_modules" REFFIELDS="id"/>
+        <KEY NAME="usermodified" TYPE="foreign" FIELDS="usermodified" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="quizaccess_mproctoring_uvid" COMMENT="Stores the user attempt level M Proctoring data.">
+     <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz_attempts id."/>
+        <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz id."/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to user id."/>
+        <FIELD NAME="attempt" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="attempt of user."/>
+        <FIELD NAME="url" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow record user url."/>
+        
+         <FIELD NAME="urlfilesize" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Size of record user url."/>
+        <FIELD NAME="screencapture" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow screen capture" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="attemptid" TYPE="foreign" FIELDS="attemptid" REFTABLE="quiz_attempts" REFFIELDS="id"/>
+        <KEY NAME="quizid" TYPE="foreign" FIELDS="quizid" REFTABLE="quiz" REFFIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+     <TABLE NAME="quizaccess_mproctoring_ueve" COMMENT="Stores the user attempt level M Proctoring data.">
+     <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz_attempts id."/>
+        <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz id."/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to user id."/>
+        <FIELD NAME="attempt" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="attempt of user."/>
+        <FIELD NAME="url" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow record user url."/>
+        
+         <FIELD NAME="urlfilesize" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Size of record user url."/>
+        <FIELD NAME="eventsecond" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow screen capture" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="attemptid" TYPE="foreign" FIELDS="attemptid" REFTABLE="quiz_attempts" REFFIELDS="id"/>
+        <KEY NAME="quizid" TYPE="foreign" FIELDS="quizid" REFTABLE="quiz" REFFIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
