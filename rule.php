@@ -160,24 +160,6 @@ class quizaccess_mproctoring extends quiz_access_rule_base {
             $ue = 'quizaccess_mproctoring_ueve';
             $sql = 'SELECT ue.id, u.*,ue.attempt,ue.eventsecond,ue.url url1,ue.urlfilesize FROM {'.$ue.'} ue JOIN {'.$u.'} u ON ue.userid=u.id where ue.quizid='.$quizid;
             $rec = $DB->get_records_sql($sql);
-            $table = new html_table();
-            $table->head = array('ID', 'Firstname', 'Lastname', 'Email', "attempt", "url", "screencapture", "eventsecond");
-            foreach ($rec as $records) {
-                $id = $records->id;
-                $firstname = $records->firstname;
-                $lastname = $records->lastname;
-                $email = $records->email;
-                $attempt = $records->attempt;
-                $urlfilesize = $records->urlfilesize;
-                if ($urlfilesize == '0') {
-                    $url = "<a class='btn  btn-primary '  href='" . $CFG->wwwroot . "/mod/quiz/accessrule/mproctoring/download.php?url1=" . $records->url1 . "' >Download </a> ";
-                } else {
-                    $url = "<a class='btn btn-danger' href='" . $CFG->wwwroot . "/mod/quiz/accessrule/mproctoring/download.php?url1=" . $records->url1 . "' >Download </a> ";
-                }
-                $eventsecond = number_format((float)$records->eventsecond, 2, '.', '') . "%";
-                $table->data[] = array($id, $firstname, $lastname, $email, $attempt, $url, $eventsecond);
-            }
-            $PAGE->requires->js_call_amd("quizaccess_mproctoring/quizAttemptData", 'init', array($table->data));
         }
         $PAGE->requires->js_call_amd("quizaccess_mproctoring/help", 'init');
     }

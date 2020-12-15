@@ -24,7 +24,8 @@
  *             Abhishek (abhishek.ambokar@camplus.co.in)
  * @copyright  Meetcs@2020
  */
-defined('MOODLE_INTERNAL') || die();
+// defined('MOODLE_INTERNAL') || die();
+require_once(__DIR__ . '/../../../../config.php');
 $url = $_REQUEST['url1'];
 $filename = basename($url);
 header('Content-Type: application/octet-stream');
