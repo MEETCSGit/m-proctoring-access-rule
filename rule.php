@@ -156,9 +156,9 @@ class quizaccess_mproctoring extends quiz_access_rule_base {
         $data = $PAGE->requires->js_call_amd("quizaccess_mproctoring/set_cookies", 'init');
         if (is_siteadmin()) {
             $quizid = $quizdata->id;
-            $u = 'mdl_user';
-            $ue = 'mdl_quizaccess_mproctoring_ueve';
-            $sql = 'SELECT ue.id, u.*,ue.attempt,ue.eventsecond,ue.url url1,ue.urlfilesize FROM '.$ue.' ue JOIN '.$u.' u ON ue.userid=u.id where ue.quizid='.$quizid;
+            $u = 'user';
+            $ue = 'quizaccess_mproctoring_ueve';
+            $sql = 'SELECT ue.id, u.*,ue.attempt,ue.eventsecond,ue.url url1,ue.urlfilesize FROM {'.$ue.'} ue JOIN {'.$u.'} u ON ue.userid=u.id where ue.quizid='.$quizid;
             $rec = $DB->get_records_sql($sql);
             $table = new html_table();
             $table->head = array('ID', 'Firstname', 'Lastname', 'Email', "attempt", "url", "screencapture", "eventsecond");
