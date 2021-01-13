@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -15,15 +23,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for the quizaccess_MProctoring plugin.
+ * Define capabilities for plugin.
  *
- * @package    quizaccess_MProctoring
- * @author     MEETCS (admin@meetcs.com)
- *             Atul (atul.adhikari@camplus.co.in)
- *             Rushab (rushab.ambre@camplus.co.in)
- *             Abhishek (abhishek.ambokar@camplus.co.in)
+ * @package    quizaccess_mproctoring
+ * @author     MEETCS(Atul, Rushab & Abhishek)
  * @copyright  Meetcs@2020
- */
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
@@ -42,5 +48,5 @@ $capabilities = array(
             'editingteacher' => CAP_ALLOW
         )
     ),
-
+    
 );

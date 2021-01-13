@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="mod/quiz/accessrule/mproctoring/db" VERSION="2019120400" COMMENT="XMLDB file for Moodle mod/quiz/accessrule/mproctoring"
+<XMLDB PATH="mod/quiz/accessrule/mproctoring/db" VERSION="2020042602" COMMENT="XMLDB file for Moodle mod/quiz/accessrule/mproctoring"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../../../lib/xmldb/xmldb.xsd">
   <TABLES>
-  	    <TABLE NAME="quizaccess_mproctoring_sett" COMMENT="Stores the quiz level M Proctoring configuration.">
+  	    <TABLE NAME="quizaccess_mproct_settings" COMMENT="Stores the quiz level M Proctoring configuration.">
      <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz id."/>
@@ -24,7 +24,7 @@
         <KEY NAME="usermodified" TYPE="foreign" FIELDS="usermodified" REFTABLE="user" REFFIELDS="id"/>
       </KEYS>
     </TABLE>
-    <TABLE NAME="quizaccess_mproctoring_uvid" COMMENT="Stores the user attempt level M Proctoring data.">
+    <TABLE NAME="quizaccess_mproct_uservideo" COMMENT="Stores the user attempt level M Proctoring data.">
      <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz_attempts id."/>
@@ -45,7 +45,7 @@
         <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
       </KEYS>
     </TABLE>
-     <TABLE NAME="quizaccess_mproctoring_ueve" COMMENT="Stores the user attempt level M Proctoring data.">
+     <TABLE NAME="quizaccess_mproct_userevent" COMMENT="Stores the user attempt level M Proctoring data.">
      <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz_attempts id."/>
@@ -53,9 +53,9 @@
         <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to user id."/>
         <FIELD NAME="attempt" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="attempt of user."/>
         <FIELD NAME="url" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow record user url."/>
-        
-         <FIELD NAME="urlfilesize" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Size of record user url."/>
-        <FIELD NAME="eventsecond" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow screen capture" />
+        <FIELD NAME="urlfilesize" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Size of record user url."/>
+        <FIELD NAME="eventsecond" TYPE="text" LENGTH="100" NOTNULL="false" SEQUENCE="false" COMMENT="Events seconds" />
+        <FIELD NAME="eventpercentage" TYPE="text" LENGTH="100" NOTNULL="false" SEQUENCE="false" COMMENT="Events percentages" />
         <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
         <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
       </FIELDS>
@@ -64,6 +64,65 @@
         <KEY NAME="attemptid" TYPE="foreign" FIELDS="attemptid" REFTABLE="quiz_attempts" REFFIELDS="id"/>
         <KEY NAME="quizid" TYPE="foreign" FIELDS="quizid" REFTABLE="quiz" REFFIELDS="id"/>
         <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+     <TABLE NAME="quizaccess_mproct_screenshot" COMMENT="Stores the user attempt level M Proctoring screen capture data.">
+     <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz_attempts id."/>
+        <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz id."/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to user id."/>
+        <FIELD NAME="filepath" TYPE="text" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="User screen capture files"/>
+        <FIELD NAME="urlfilesize" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Size of record user url."/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="attemptid" TYPE="foreign" FIELDS="attemptid" REFTABLE="quiz_attempts" REFFIELDS="id"/>
+        <KEY NAME="quizid" TYPE="foreign" FIELDS="quizid" REFTABLE="quiz" REFFIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+
+ <TABLE NAME="quizaccess_mproct_userphoto" COMMENT="Stores the user photos M Proctoring data.">
+     <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz_attempts id."/>
+        <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to quiz id."/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Foreign key to user id."/>
+        <FIELD NAME="url" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Bool to allow record user url."/>
+        
+        <FIELD NAME="urlfilesize" TYPE="text" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Size of record user url."/>
+        <FIELD NAME="matchingpercent" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Face matching percentile."/>
+        <FIELD NAME="multiplefaces" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="More than one face detected."/>
+        
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="attemptid" TYPE="foreign" FIELDS="attemptid" REFTABLE="quiz_attempts" REFFIELDS="id"/>
+        <KEY NAME="quizid" TYPE="foreign" FIELDS="quizid" REFTABLE="quiz" REFFIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+
+    <TABLE NAME="quizaccess_mproct_auth" COMMENT="Stores the user attempt level M Proctoring Auth .">
+     <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Foreign key to quiz_attempts id."/>
+        <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Foreign key to quiz id."/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Foreign key to user id."/>
+        <FIELD NAME="auth_face_id" TYPE="text" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Azure face id."/>
+        <FIELD NAME="facepath" TYPE="text" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="User screen capture files"/>
+        <FIELD NAME="idpath" TYPE="text" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Size of record user url."/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        
       </KEYS>
     </TABLE>
   </TABLES>

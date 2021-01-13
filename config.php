@@ -15,14 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for the quizaccess_MProctoring plugin.
+ * Serves an encrypted/unencrypted string as a file for download.
  *
- * @package    quizaccess_MProctoring
- * @author     MEETCS (admin@meetcs.com)
- *             Atul (atul.adhikari@camplus.co.in)
- *             Rushab (rushab.ambre@camplus.co.in)
- *             Abhishek (abhishek.ambokar@camplus.co.in)
+ * @package    quizaccess_mproctoring
+ * @author     MEETCS(Atul, Rushab & Abhishek)
  * @copyright  Meetcs@2020
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once(__DIR__ . '/../../../../config.php');
+
+
+// $config = \quizaccess_mproctoring\helper::get_mproctoring_config_content($cmid);
+// \quizaccess_mproctoring\helper::send_mproctoring_config_file($config);

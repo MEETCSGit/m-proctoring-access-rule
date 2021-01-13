@@ -1,0 +1,86 @@
+[23-Oct-2020 12:43:53 Europe/Berlin] hello
+[23-Oct-2020 12:43:54 Europe/Berlin] hello
+[23-Oct-2020 12:43:56 Europe/Berlin] hello
+[23-Oct-2020 12:43:57 Europe/Berlin] hello
+[23-Oct-2020 12:43:59 Europe/Berlin] hello
+[23-Oct-2020 12:44:01 Europe/Berlin] hello
+[23-Oct-2020 12:44:02 Europe/Berlin] hello
+[23-Oct-2020 12:44:03 Europe/Berlin] hello
+[23-Oct-2020 12:44:05 Europe/Berlin] hello
+[23-Oct-2020 12:44:06 Europe/Berlin] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 72
+[23-Oct-2020 12:44:06 Europe/Berlin] Default exception handler: Exception - Cannot use object of type stdClass as array Debug: 
+Error code: generalexceptionmessage
+* line 73 of \mod\quiz\accessrule\mproctoring\api\verify.php: Error thrown
+* line 147 of \mod\quiz\accessrule\mproctoring\api\verify.php: call to get_face_id()
+
+[23-Oct-2020 12:46:39 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:39 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:39 Europe/Berlin] hello
+[23-Oct-2020 12:46:41 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:42 Europe/Berlin] hello
+[23-Oct-2020 12:46:44 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:44 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:44 Europe/Berlin] hello
+[23-Oct-2020 12:46:46 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:46 Europe/Berlin] hello
+[23-Oct-2020 12:46:47 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:47 Europe/Berlin] hello
+[23-Oct-2020 12:46:48 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:48 Europe/Berlin] hello
+[23-Oct-2020 12:46:50 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:50 Europe/Berlin] hello
+[23-Oct-2020 12:46:51 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:51 Europe/Berlin] hello
+[23-Oct-2020 12:46:52 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:52 Europe/Berlin] hello
+[23-Oct-2020 12:46:53 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, object given in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 71
+[23-Oct-2020 12:46:53 Europe/Berlin] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 72
+[23-Oct-2020 12:46:53 Europe/Berlin] Default exception handler: Exception - Cannot use object of type stdClass as array Debug: 
+Error code: generalexceptionmessage
+* line 73 of \mod\quiz\accessrule\mproctoring\api\verify.php: Error thrown
+* line 147 of \mod\quiz\accessrule\mproctoring\api\verify.php: call to get_face_id()
+
+[23-Oct-2020 12:50:17 Europe/Berlin] hello
+[23-Oct-2020 12:50:18 Europe/Berlin] hello
+[23-Oct-2020 12:50:20 Europe/Berlin] hello
+[23-Oct-2020 12:50:22 Europe/Berlin] hello
+[23-Oct-2020 12:50:23 Europe/Berlin] hello
+[23-Oct-2020 12:50:25 Europe/Berlin] hello
+[23-Oct-2020 12:50:26 Europe/Berlin] hello
+[23-Oct-2020 12:50:28 Europe/Berlin] hello
+[23-Oct-2020 12:50:29 Europe/Berlin] hello
+[23-Oct-2020 12:50:30 Europe/Berlin] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 72
+[23-Oct-2020 12:50:30 Europe/Berlin] Default exception handler: Exception - Cannot use object of type stdClass as array Debug: 
+Error code: generalexceptionmessage
+* line 73 of \mod\quiz\accessrule\mproctoring\api\verify.php: Error thrown
+* line 147 of \mod\quiz\accessrule\mproctoring\api\verify.php: call to get_face_id()
+
+[23-Oct-2020 12:55:15 Europe/Berlin] hello
+[23-Oct-2020 12:55:17 Europe/Berlin] hello
+[23-Oct-2020 12:55:20 Europe/Berlin] hello
+[23-Oct-2020 12:55:21 Europe/Berlin] hello
+[23-Oct-2020 12:55:22 Europe/Berlin] hello
+[23-Oct-2020 12:55:24 Europe/Berlin] hello
+[23-Oct-2020 12:55:25 Europe/Berlin] hello
+[23-Oct-2020 12:55:26 Europe/Berlin] hello
+[23-Oct-2020 12:55:27 Europe/Berlin] hello
+[23-Oct-2020 12:55:29 Europe/Berlin] hello
+[23-Oct-2020 12:55:30 Europe/Berlin] hello
+[23-Oct-2020 12:55:31 Europe/Berlin] hello
+[23-Oct-2020 12:55:33 Europe/Berlin] hello
+[23-Oct-2020 12:55:34 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\moodle_site\mod\quiz\accessrule\mproctoring\api\verify.php on line 145
+[23-Oct-2020 12:56:49 Europe/Berlin] hello
+[23-Oct-2020 12:56:50 Europe/Berlin] hello
+[23-Oct-2020 12:56:51 Europe/Berlin] hello
+[23-Oct-2020 12:56:51 Europe/Berlin] hello
+[23-Oct-2020 12:56:52 Europe/Berlin] hello
+[23-Oct-2020 12:56:52 Europe/Berlin] hello
+[23-Oct-2020 12:56:52 Europe/Berlin] hello
+[23-Oct-2020 12:56:53 Europe/Berlin] hello
+[23-Oct-2020 12:56:53 Europe/Berlin] hello
+[23-Oct-2020 12:56:54 Europe/Berlin] hello
+[23-Oct-2020 12:56:54 Europe/Berlin] hello
+[23-Oct-2020 12:56:54 Europe/Berlin] hello
+[23-Oct-2020 12:56:55 Europe/Berlin] hello
+[23-Oct-2020 12:56:55 Europe/Berlin] hello
+[23-Oct-2020 12:56:55 Europe/Berlin] hello
